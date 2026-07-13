@@ -21,23 +21,56 @@ func startRepl() {
 			continue
 		}
 
-		command := cleaned[0]
+		commandName := cleaned[0]
 
-		switch command {
-		case "help":
-			fmt.Println("Welcome to Pokedex help menu!")
-			fmt.Println("Here are your available commands:")
-			fmt.Println(" - help")
-			fmt.Println(" - exit")
-			fmt.Println("")
-		case "exit":
-			os.Exit(0)
+		availableCommands := getCommands()
 
-		default:
+		command, ok := availableCommands[commandName]
+		if !ok {
 			fmt.Println("Invalid command")
+			continue
 		}
 
+		if err := command.callback(); err != nil {
+			fmt.Println("Error:", err)
+		}
+
+		// switch command {
+		// case "help":
+		// 	fmt.Println("Welcome to Pokedex help menu!")
+		// 	fmt.Println("Here are your available commands:")
+		// 	fmt.Println(" - help")
+		// 	fmt.Println(" - exit")
+		// 	fmt.Println("")
+		// case "exit":
+		// 	os.Exit(0)
+
+		// default:
+		// 	fmt.Println("Invalid command")
+		// }
+
 		// fmt.Println("echoing: ", cleaned)
+	}
+}
+
+type cliCommand struct {
+	name     string
+	desc     string
+	callback func() error
+}
+
+func getCommands() map[string]cliCommand {
+	return map[string]cliCommand{
+		"help": {
+			name:     "help",
+			desc:     "Prints the help menu",
+			callback: callbackHelp,
+		},
+		"exit": {
+			name:     "exit",
+			desc:     "Turns off the Pokedex",
+			callback: callbackExit,
+		},
 	}
 }
 
