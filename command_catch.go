@@ -1,9 +1,9 @@
 package main
 
 import (
-	"math/rand"
 	"errors"
 	"fmt"
+	"math/rand"
 )
 
 func callbackCatch(cfg *config, args ...string) error {
@@ -25,6 +25,7 @@ func callbackCatch(cfg *config, args ...string) error {
 		return fmt.Errorf("Failed to catch %s", pokemonName)
 	}
 
+	cfg.caughtPokemon[pokemonName] = pokemon
 	fmt.Printf("%s was caught!\n", pokemonName)
 	return nil
 }
