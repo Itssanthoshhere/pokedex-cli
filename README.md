@@ -4,10 +4,10 @@ A fully-featured Command Line Interface (CLI) application built in Go that lets 
 
 ## Features ✨
 
-* **Interactive REPL**: A built-in command loop that takes your inputs and provides instantaneous feedback.
-* **Smart Caching**: Implements an in-memory caching system to minimize API calls to PokeAPI, making repeated commands lightning fast.
-* **Exploration & Catching**: Discover different location areas in the Pokémon world, see what Pokémon live there, and try to catch them! Catch rates are calculated based on the Pokémon's base experience.
-* **Personal Pokedex**: Keep track of the Pokémon you've caught and inspect their detailed stats (Height, Weight, Stats, and Types).
+- **Interactive REPL**: A built-in command loop that takes your inputs and provides instantaneous feedback.
+- **Smart Caching**: Implements an in-memory caching system to minimize API calls to PokeAPI, making repeated commands lightning fast.
+- **Exploration & Catching**: Discover different location areas in the Pokémon world, see what Pokémon live there, and try to catch them! Catch rates are calculated based on the Pokémon's base experience.
+- **Personal Pokedex**: Keep track of the Pokémon you've caught and inspect their detailed stats (Height, Weight, Stats, and Types).
 
 ## Installation 🛠️
 
@@ -33,23 +33,23 @@ You will be greeted with the ` >` prompt. Type any of the available commands to 
 
 ### Commands
 
-* `help` - Prints the help menu with all available commands.
-* `exit` - Safely exits the Pokedex REPL.
-* `map` - Lists the next 20 location areas in the Pokémon world. Successive calls will paginate forward through the list.
-* `mapb` - Lists the previous 20 location areas (paginates backward).
-* `explore {location_area}` - Lists all the Pokémon that can be found in a specific location area.
-  * *Example:* `explore mt-coronet-2f`
-* `catch {pokemon_name}` - Throws a Pokeball at a Pokémon! The catch success rate depends on the Pokémon's base experience.
-  * *Example:* `catch machoke`
-* `inspect {pokemon_name}` - Shows the details and base stats of a Pokémon. **Note:** You can only inspect Pokémon you have successfully caught!
-  * *Example:* `inspect machoke`
-* `pokedex` - Displays a list of all the Pokémon you currently have in your Pokedex.
+- `help` - Prints the help menu with all available commands.
+- `exit` - Safely exits the Pokedex REPL.
+- `map` - Lists the next 20 location areas in the Pokémon world. Successive calls will paginate forward through the list.
+- `mapb` - Lists the previous 20 location areas (paginates backward).
+- `explore {location_area}` - Lists all the Pokémon that can be found in a specific location area.
+  - _Example:_ `explore mt-coronet-2f`
+- `catch {pokemon_name}` - Throws a Pokeball at a Pokémon! The catch success rate depends on the Pokémon's base experience.
+  - _Example:_ `catch machoke`
+- `inspect {pokemon_name}` - Shows the details and base stats of a Pokémon. **Note:** You can only inspect Pokémon you have successfully caught!
+  - _Example:_ `inspect machoke`
+- `pokedex` - Displays a list of all the Pokémon you currently have in your Pokedex.
 
 ## Example Session 🎮
 
 ```text
  >map
-Location areas: 
+Location areas:
  - canalave-city-area
  - eterna-city-area
 ...
@@ -76,6 +76,7 @@ Stats:
 ...
 Types:
   - fighting
+ >exit
 ```
 
 ## Running Tests 🧪
